@@ -1,3 +1,4 @@
+
 body {
   background-color: #0a0a0a;
   color: white;
@@ -10,89 +11,15 @@ body {
   border: 1px solid transparent;
   margin-left: 5%;
 }
-.carousel-container {
-  position: relative;
-  width: 100%;
-  height: 250px;
-  max-width: 600px;
-  margin: 0 auto;
-  overflow: hidden;
-  align-items: center;
-  justify-content: center;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+
+.tamanhoFilmeCatalogo{
+            margin: -8px;
+    width: 410px;
+    height: 252px;  
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 35%, rgba(0, 0, 0, 1) 104%) 0% / cover, url(https://rollingstone.com.br/media/uploads/2024/07/divertida-mente-2-se-torna-a-maior-animacao-da-historia-do-cinema.jpg) center center no-repeat;
+    background-size: contain;
 }
-.carousel {
-  display: flex;
-  width: 300%;
-  animation: slide 10s infinite;
-}
-.carousel-slide {
-  min-width: 100%;
-  transition: transform 0.5s ease-in-out;
-}
-.carousel-slide img {
-  width: 100%;
-  display: block;
-}
-.carousel-dots {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-}
-.dot {
-  height: 7px;
-  width: 7px;
-  background-color: #535353;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.dot.active {
-  background-color: rgb(255, 255, 255);
-  size: 2px;
-}
-@keyframes slide {
-  0% {
-    transform: translateX(0%);
-  }
-  33% {
-    transform: translateX(-100%);
-  }
-  66% {
-    transform: translateX(-200%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-.carousel-container {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  overflow: hidden;
-  background: #080814;
-}
-.filmeCatalogo {
-  width: 280px;
-  height: 112px;
-  margin-left: 5%;
-  justify-content: center;
-  position: center;
-  margin-top: 7%;
-  background-color: #0a0a0a;
-}
-.tamanhoFilmeCatalogo {
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-}
-.tamanhoFilmeCatalogo:active {
-  opacity: 0.4;
-}
+
 .generos {
   overflow-x: auto;
   white-space: nowrap;
