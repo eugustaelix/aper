@@ -1,0 +1,260 @@
+body {
+  background-color: #0a0a0a;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu,
+    "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
+}
+.bordas {
+  width: 91%;
+  border: 1px solid transparent;
+  margin-left: 5%;
+}
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.carousel {
+  display: flex;
+  width: 300%;
+  animation: slide 10s infinite;
+}
+.carousel-slide {
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel-slide img {
+  width: 100%;
+  display: block;
+}
+.carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+.dot {
+  height: 7px;
+  width: 7px;
+  background-color: #535353;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot.active {
+  background-color: rgb(255, 255, 255);
+  size: 2px;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  33% {
+    transform: translateX(-100%);
+  }
+  66% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #080814;
+}
+.filmeCatalogo {
+  width: 280px;
+  height: 112px;
+  margin-left: 5%;
+  justify-content: center;
+  position: center;
+  margin-top: 7%;
+  background-color: #0a0a0a;
+}
+.tamanhoFilmeCatalogo {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.tamanhoFilmeCatalogo:active {
+  opacity: 0.4;
+}
+.generos {
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-top: 6%;
+  margin-left: 3%;
+  scrollbar-width: none;
+}
+.generos-scroll .item {
+  display: inline-block;
+  color: #616161;
+  -webkit-text-stroke: 0.7px #616161;
+  margin: 0 3%;
+  font-size: 17px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: color 0.3s, opacity 0.3s;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:focus,
+a:active {
+  background: none;
+  outline: none;
+}
+.item:active {
+  background-color: transparent;
+  font-weight: bold;
+  color: white;
+}
+.titulo {
+  width: 99%;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nmTitulo {
+  -webkit-text-stroke: 0.5px white;
+  color: white;
+  font-size: 18px;
+}
+.seeAll {
+  margin-top: 1%;
+  color: red;
+  -webkit-text-stroke: 0.7px red;
+  font-size: 14px;
+  margin-left: -2%;
+}
+.seeAll:active {
+  color: rgb(71, 0, 0);
+  -webkit-text-stroke: 0.7px rgb(71, 0, 0);
+}
+.Playlist {
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+.MedidasCapaFilme {
+  position: relative;
+  width: 120px;
+  height: 177px;
+  margin-top: 2%;
+  margin-right: 4%;
+  justify-content: center;
+  display: inline-block;
+  background-color: #0a0a0a; /* Cor padrão */
+  border-radius: 7px;
+}
+.capaFilme {
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  margin-bottom: -5%;
+  position: relative;
+  z-index: 2;
+  transition: box-shadow 0.3s ease; /* Animação suave do box-shadow */
+}
+.capaFilme:active {
+  opacity: 0.4;
+}
+.nmFilme {
+  width: 120px;
+  height: 42px;
+  word-wrap: break-word;
+  overflow: auto;
+  text-overflow: ellipsis;
+  white-space: normal;
+  scrollbar-width: none;
+  font-size: 12px;
+  font-weight: bold;
+}
+.navbar {
+  position: fixed; /* Fixa a barra no rodapé */
+  bottom: 0;
+  width: 95%;
+  height: 80px;
+  background-color: #19191b; /* Cor de fundo da navbar */
+  display: flex;
+  justify-content: space-around; /* Espaçamento uniforme entre os ícones */
+  align-items: center;
+  padding: 10px 0;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* Sombra no topo da navbar */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  color: white;
+}
+.nav-item img {
+  width: 24px; /* Tamanho do ícone */
+  height: 24px;
+  white-space: nowrap;
+  margin-bottom: 1px; /* Espaçamento entre ícone e texto */
+  filter: invert(100%); /* Faz os ícones ficarem brancos, se forem pretos */
+}
+.nav-item p {
+  margin: 0;
+}
+.nav-item:active {
+  filter: invert(60%);
+}
+.telaAtual {
+  display: inline-block;
+  align-items: center; /* Alinha verticalmente ícone e texto */
+  display: flex; /* Usar flexbox para alinhar os itens */
+  font-size: 14px;
+  gap: 8px;
+  -webkit-text-stroke: 0.1px rgb(255, 255, 255);
+  background-color: red;
+  width: 97px;
+  border-radius: 50px;
+  height: 43px;
+}
+/* Animação do Pull-to-Refresh */
+#refresh {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 4;
+}
+
+#refresh.show {
+    transform: translateY(0);
+}
