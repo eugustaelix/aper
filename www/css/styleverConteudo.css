@@ -334,10 +334,68 @@ body {
 
 #carregamento{
         z-index: 100;
-    background-color: red;
-    color: blue;
+    background-color: #0A0A0A;
     display: block;
     position: absolute;
     width: 100%;
     height: 100%;
+}
+
+/* From Uiverse.io by VashonG */ 
+.loader {
+  --hue: 0; /* Inicialmente vermelho */
+  --size: 100px;
+  --border: 10px;
+  --speed: 1s;
+  --blur: var(--border);
+      top: 50%;
+    left: 50%;
+}
+
+.loader {
+  width: var(--border);
+  aspect-ratio: 1;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  --y: calc((var(--size) * -0.5) + (var(--border) * 0.5));
+  transform: rotate(0deg) translateY(var(--y));
+  animation: spin var(--speed) infinite linear;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--border) * -0.5);
+  border-radius: 50%;
+  background: white;
+  filter: blur(var(--blur));
+  z-index: -1;
+}
+
+.loader::after {
+  content: "";
+  width: var(--size);
+  aspect-ratio: 1;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  translate: -50% 0;
+  background: conic-gradient(
+    white,
+    hsl(var(--hue), 100%, 70%), /* Cor inicial: Vermelho */
+    hsl(270, 100%, 50%), /* Cor final: Roxo */
+    transparent 65%
+  );
+  border-radius: 50%;
+  mask: radial-gradient(
+    transparent calc(((var(--size) * 0.5) - var(--border)) - 1px),
+    white calc((var(--size) * 0.5) - var(--border))
+  );
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(-360deg) translateY(var(--y));
+  }
 }

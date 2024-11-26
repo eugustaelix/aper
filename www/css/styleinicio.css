@@ -6,6 +6,7 @@ body {
     "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB",
     "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
 }
+
 .bordas {
   width: 91%;
   border: 1px solid transparent;
@@ -13,11 +14,21 @@ body {
 }
 
 .tamanhoFilmeCatalogo{
-            margin: -8px;
-    width: 410px;
-    height: 252px;  
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 35%, rgba(0, 0, 0, 1) 104%) 0% / cover, url(https://rollingstone.com.br/media/uploads/2024/07/divertida-mente-2-se-torna-a-maior-animacao-da-historia-do-cinema.jpg) center center no-repeat;
+    margin: -8px;
     background-size: contain;
+    margin-top: -17px;
+}
+
+#divertidamente{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(10, 10, 10, 1) 104%) 0% / cover, url(https://rollingstone.com.br/media/uploads/2024/07/divertida-mente-2-se-torna-a-maior-animacao-da-historia-do-cinema.jpg) center center no-repeat;
+    width: 412px;
+    height: 254px;  
+}
+
+#venom3{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(10, 10, 10, 1) 104%) 0% / cover, url(https://ingresso-a.akamaihd.net/b2b/production/uploads/article/image/2658/1bbb45ecabc12ced14643d7b0a2f117a.jpg) center center no-repeat;
+    width: 420px;
+    height: 254px;  
 }
 
 .generos {
@@ -115,6 +126,7 @@ a:active {
   font-weight: bold;
 }
 .navbar {
+  box-sizing: border-box;
   position: fixed; /* Fixa a barra no rodapé */
   bottom: 0;
   width: 95%;
@@ -184,4 +196,21 @@ a:active {
 
 #refresh.show {
     transform: translateY(0);
+}
+.fade-screen {
+  position: fixed; /* Fixa a camada sobre toda a tela */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0a;
+  opacity: 0; /* Inicialmente invisível */
+  pointer-events: none; /* Não bloqueia interações */
+  z-index: 9999; /* Fica sobre todo o conteúdo */
+  transition: opacity 0.5s ease-in-out; /* Animação de fade-in */
+}
+
+/* Quando a tela preta deve aparecer */
+.fade-screen.active {
+  opacity: 1; /* Torna a tela preta visível */
 }

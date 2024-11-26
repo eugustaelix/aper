@@ -1,282 +1,109 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <style>
-        body {
-    background-image: url(imagens/fundo.jpg);
-    color: #fff;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 100vh;
-    background-size: 740px;
-    backdrop-filter: blur(3px);
-    }
- 
-    .container {
-      width: 100%;
-      padding: 0;
-      position: relative;
-    }
- 
-    .form-container {
-      background-color: #121212;
-      border-radius: 120px 0 0 0;
-      padding: 30px 20px;
-      box-sizing: border-box;
-      width: 100%;
-      max-width: 600px;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      margin-right: 10px;
-          box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
-    }
- 
-    .back-arrow {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
- 
-    .back-arrow img {
-      width: 20px;
-      height: 20px;
-    }
- 
-    h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #fff;
-      text-align: center;
-    }
- 
-    p {
-      font-size: 14px;
-      color: #bbb;
-      margin-bottom: 20px;
-      text-align: center;
-    }
- textarea:focus, input:focus, select:focus {
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: 0;
-} 
-    .input-group {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      margin-bottom: 20px;
-    }
- 
-    .input-group label {
-      font-size: 14px;
-      color: #aaa;
-      margin-bottom: 5px;
-    }
- 
-    .input-group input {
-      padding: 12px;
-      border: 1px solid #444;
-      border-radius: 10px;
-      background-color: #2a2a2a;
-      color: #fff;
-      font-size: 14px;
-      padding-left: 40px;
-      margin-bottom: 5px;
-      position: relative;
-    }
- 
-    /* Imagem de fundo dentro das caixas de input */
-  #email{
-    background-image: url(imagens/icoemail.png);
-    margin-right: 10px;
-    margin-left: 5px;
-    background-size: 24px;
-    background-position: 12px center;
-    background-repeat: no-repeat;
-    width: 83%;
-    }
-
-        #password{
-    background-image: url(imagens/icopass.png);
-    margin-right: 10px;
-    margin-left: 5px;
-    background-size: 24px;
-    background-position: 12px center;
-    background-repeat: no-repeat;
-    width: 83%;
-    }
- 
-    .input-group small {
-      color: #666;
-      font-size: 12px;
-      margin-top: 5px;
-    }
- 
-    .login-btn {
-      display: block;
-      width: 100%;
-      max-width: 320px;
-      padding: 12px;
-      background-color: #e50914;
-      border: none;
-      border-radius: 10px;
-      color: #fff;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin: 20px auto 0;
-    }
- 
-    .login-btn:hover {
-      background-color: #b40811;
-    }
- 
-    .terms {
-      font-size: 12px;
-      color: #bbb;
-      margin-top: 20px;
-      text-align: center;
-    }
- 
-    .terms a {
-      color: #e50914;
-      text-decoration: none;
-    }
- 
-    .social-login {
-      margin-top: 20px;
-    }
- 
-    .social-login span {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 14px;
-      font-weight: bold;
-      text-align: center;
-    }
- 
-    .icons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
- 
-    .icons img {
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-    }
- 
-    .already-account {
-      font-size: 14px;
-      margin-top: 20px;
-      text-align: center;
-    }
- 
-    .already-account a {
-      color: #e50914;
-      text-decoration: none;
-    }
- 
-    .metflix-title {
-      font-size: 40px;
-      font-weight: bold;
-      color: #fff;
-      margin-top: 20px;
-    }
- 
-    .metflix-title {
-      font-size: 40px;
-      font-weight: bold;
-      text-align: center;
-      position: fixed;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 10px 0;
-      width: 100%;
-      z-index: 10;
-    }
- 
-    .met {
-      color: #fff; /* Cor branca para 'Met' */
-    }
- 
-    .flix {
-      color: #e50914; /* Cor vermelha para 'flix' */
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="metflix-title">
-      <span class="met">Met</span><span class="flix">flix</span>
-    </div>
-
-    <div class="form-container">
-      <h1>Login</h1>
-      <p>Insira suas informações abaixo ou continue com uma conta social</p>
-      <form id="loginForm">
-        <div class="input-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Digite seu email">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Freeflix</title>
+        <link rel="stylesheet" href="css/styleindex.css" />
+    </head>
+    <body>
+        <img src="imagens/rolo-de-filme.png" class="rolodefilme">
+        <img src="imagens/personalizar.png" class="personalizar">
+        <img src="imagens/compartilhar.png" class="compartilhar">
+        <div class="header">
+            FREE
+            <span>FLIX</span>
         </div>
-        <div class="input-group">
-          <label for="password">Senha</label>
-          <input type="password" id="password" placeholder="Digite sua senha">
-        </div>
-        <button class="login-btn" type="submit">Login</button>
-      </form>
+        <!-- Caixa flutuante OBS: não pode apagar, se não vai dar merda -->
+        <div class="floating-box">
+            <h1 class="text-slide">########### <span>Free</span></h1>
 
-      <div class="already-account">
-        <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
-      </div>
-    </div>
-  </div>
+                <p class="text-slide">############,<br />############</p>
 
-  <script>
-    // Verifica se o usuário já está cadastrado no localStorage
-    window.onload = function() {
-        const usuario = localStorage.getItem('usuario');
-        
-        if (usuario) {
-            // Se o usuário já tiver uma conta, redireciona para a página principal
-            window.location.href = "inicio.html"; // Altere para a sua página principal
-        }
-    };
+                    <div class="dots">
+                        <span class="active"></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <button onclick="window.location.href='login.html'">Iniciar</button>
+                </div>
+                <script>
+      // Selecionando as bolinhas
+      const dots = document.querySelectorAll(".dots span");
 
-    // Função de login
-    document.getElementById('loginForm').addEventListener('submit', function (event) {
-        event.preventDefault(); // Impede o envio do formulário padrão
+      // Texto para cada slide
+      const texts = [
+        {
+          title: "Personalize sua <span class='red-text'>Experiência</span>",
+          text: "Escolha seus gêneros favoritos e receba recomendações que combinam com o seu estilo.",
+          imageClass: "personalizar", // Classe da imagem para este slide
+        },
+        {
+          title:
+            "<span class='red-text'>Acompanhe</span> e <span class='red-text'>Compartilhe</span>",
+          text: "Salve seus favoritos, curta os melhores filmes e compartilhe com seus amigos.",
+          imageClass: "compartilhar", // Classe da imagem para este slide
+        },
+        {
+          title:
+            "Descubra o Mundo do <span class='red-text'>Entretenimento</span>",
+          text: "Explore uma seleção incrível de filmes e séries especialmente escolhidos para você.",
+          imageClass: "rolodefilme", // Classe da imagem para este slide
+        },
+      ];
 
-        const emailInput = document.getElementById('email').value;
-        const passwordInput = document.getElementById('password').value;
+      let currentIndex = 0; // Texto atual
 
-        const usuario = JSON.parse(localStorage.getItem('usuario')); // Pega os dados do usuário armazenado no localStorage
+      // Atualiza o conteúdo da caixa
+      function updateContent() {
+  const currentText = texts[currentIndex]; // Texto atual
+  const titleElement = document.querySelector(".floating-box h1"); // Título
+  const textElement = document.querySelector(".floating-box p"); // Texto
 
-        if (usuario) {
-            // Verifica se o email e a senha coincidem com os dados armazenados
-            if (usuario.email === emailInput && usuario.senha === passwordInput) {
-                // Redireciona para a página principal se as credenciais estiverem corretas
-                window.location.href = "inicio.html"; // Altere para a sua página principal
-            } else {
-                // Caso as credenciais estejam incorretas
-                alert("Informações incorretas. Por favor, verifique seu email e senha.");
-            }
-        } else {
-            // Caso não haja nenhum usuário armazenado no localStorage
-            alert("Nenhuma conta encontrada. Por favor, cadastre-se primeiro.");
-        }
-    });
-  </script>
-</body>
-</html>
+  // Seleciona a imagem atual (ativa) para aplicar fade-out
+  const currentImage = document.querySelector("img.show");
+
+  // Fade out: Faz o texto e a imagem desaparecerem suavemente
+  titleElement.style.opacity = 0;
+  textElement.style.opacity = 0;
+
+  if (currentImage) {
+    currentImage.classList.remove("show");
+    currentImage.classList.add("fade-out");
+  }
+
+  // Espera o tempo da transição de fade-out (1 segundo)
+  setTimeout(() => {
+    // Atualiza o conteúdo
+    titleElement.innerHTML = currentText.title;
+    textElement.innerHTML = currentText.text;
+
+    // Atualiza para a próxima imagem
+    const nextImage = document.querySelector(`.${currentText.imageClass}`);
+    if (nextImage) {
+      nextImage.classList.remove("fade-out");
+      nextImage.classList.add("show");
+    }
+
+    // Fade in: Faz o texto aparecer
+    titleElement.style.opacity = 1;
+    textElement.style.opacity = 1;
+
+    // Atualiza a bolinha ativa
+    dots.forEach((dot) => dot.classList.remove("active"));
+    dots[currentIndex].classList.add("active"); // Adiciona a classe "active" na bolinha atual
+  }, 1000); // Tempo de espera para sincronizar com a transição de fade-out
+
+  // Atualiza para o próximo texto
+  currentIndex = (currentIndex + 1) % texts.length;
+}
+
+// Inicializa o conteúdo ao carregar a página
+updateContent();
+
+// Atualiza o conteúdo a cada 3 segundos
+setInterval(updateContent, 6000);
+
+                </script>
+            </body>
+        </html>
