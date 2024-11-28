@@ -7,6 +7,93 @@ body {
     "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
 }
 
+.slider_container {
+    position: absolute;
+    width: 100%;
+    height: 29%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+    left: 0;
+    top: 0;
+}
+.slider {
+  position: relative;
+  width: 380%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  animation: 30s cubic-bezier(1, 0.95, 0.565, 1) sliding infinite;
+}
+.slide {
+  position: relative;
+  min-width: 100%;
+  height: 100%;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+}
+
+.slide.one {
+    background-image: url(https://cdn.ome.lt/rnDDX1jRmHx3KKhHuM2fJvDHq_M=/970x360/smart/uploads/conteudo/fotos/venom3_HzWOMBv.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.slide.two {
+    background-image: url(https://rollingstone.com.br/media/uploads/2024/07/divertida-mente-2-se-torna-a-maior-animacao-da-historia-do-cinema.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.slide.three {
+    background-image: url(https://ingresso-a.akamaihd.net/b2b/production/uploads/article/image/2708/38956089d4ae41385e15bdd91d2facff.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.slide.four {
+    background-image: url(https://tm.ibxk.com.br/2024/10/18/18102731424066.jpg?ims=750x);
+    background-size: cover;
+    background-position: center;
+}
+.slide.five {
+    background-image: url(https://static.poder360.com.br/2024/11/ainda-estou-aqui-1-848x477.png);
+    background-size: cover;
+    background-position: center;
+}
+@keyframes sliding {
+  0% {
+    transform: translateX(0%);
+  }
+  20% {
+    transform: translateX(0%);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  45% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  70% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-300%);
+  }
+  95% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-400%);
+  }
+}
+
 .bordas {
   width: 91%;
   border: 1px solid transparent;
@@ -19,16 +106,14 @@ body {
     margin-top: -17px;
 }
 
-#divertidamente{
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(10, 10, 10, 1) 104%) 0% / cover, url(https://rollingstone.com.br/media/uploads/2024/07/divertida-mente-2-se-torna-a-maior-animacao-da-historia-do-cinema.jpg) center center no-repeat;
+#sombra{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(10, 10, 10, 1) 104%) 0% / cover, url(../imagens/nada.png) center center no-repeat;
     width: 412px;
-    height: 254px;  
-}
-
-#venom3{
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(10, 10, 10, 1) 104%) 0% / cover, url(https://ingresso-a.akamaihd.net/b2b/production/uploads/article/image/2658/1bbb45ecabc12ced14643d7b0a2f117a.jpg) center center no-repeat;
-    width: 420px;
-    height: 254px;  
+    height: 257px;
+    background-size: cover;
+    z-index: 99;
+    position: relative;
+    pointer-events: none;  
 }
 
 .generos {

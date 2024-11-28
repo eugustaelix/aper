@@ -4,17 +4,19 @@
         padding: 0;
         box-sizing: border-box;
       }
-
-      body {
-        font-family: Arial, sans-serif;
+        
+        body {
+        background-color: #0a0a0a;
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu,
+        "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB",
+        "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        background-color: #121212;
-        color: white;
         position: relative;
-      }
+        }
 
       /* Estilo do título FREEFLIX */
       .header {
@@ -108,7 +110,7 @@
         height: 10px;
         background: #666; /* Cor inicial das bolinhas */
         border-radius: 50%; /* Torna as bolinhas redondas */
-        transition: background 0.3s ease; /* Transição para mudar a cor OBS: tem que estar em sincronia com os slides exemplo 3s = 3000 */
+        transition: background 0.4s ease; /* Transição para mudar a cor OBS: tem que estar em sincronia com os slides exemplo 3s = 3000 */
       }
 
       /* Quando a bolinha estiver ativa */
@@ -135,13 +137,13 @@
       .rolodefilme {
         position: absolute;
             width: 67%;
-        top: 20%;
+        top: 19%;
       }
 
       .personalizar {
         position: absolute;
         width: 65%;
-        top: 22%;
+        top: 23%;
       }
       .compartilhar {
         border-radius: 75px;

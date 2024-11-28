@@ -72,92 +72,98 @@
     </div>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const apiKey = "e293e84786f06c94bf36414cc9240da4"; // Sua chave de API
-        const queryInput = document.getElementById("query");
-        const resultadosDiv = document.querySelector(".Resultados");
-        const qtResultados = document.getElementById("qtResultados");
+    document.addEventListener("DOMContentLoaded", function () {
+  const apiKey = "e293e84786f06c94bf36414cc9240da4"; // Sua chave de API
+  const queryInput = document.getElementById("query");
+  const resultadosDiv = document.querySelector(".Resultados");
+  const qtResultados = document.getElementById("qtResultados");
 
-        // Função para buscar filmes e séries da API
-        async function searchMovies(query) {
-          if (!query) return;
+  // Função para buscar filmes e séries da API
+  async function searchMovies(query) {
+    if (!query) return;
 
-          // Busca tanto filmes quanto séries
-          const url = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&query=${query}&language=pt-BR`;
-          try {
-            const response = await fetch(url);
-            const data = await response.json();
-            displayResults(data.results);
-          } catch (error) {
-            console.error("Erro na busca:", error);
-          }
+    // Busca tanto filmes quanto séries
+    const url = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&query=${query}&language=pt-BR`;
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      displayResults(data.results);
+    } catch (error) {
+      console.error("Erro na busca:", error);
+    }
+  }
+
+  // Função para buscar o IMDb ID (para filmes) ou o TMDB ID (para séries)
+  async function getContentId(tmdbId, mediaType) {
+    const url = `https://api.themoviedb.org/3/${mediaType}/${tmdbId}?api_key=${apiKey}&language=pt-BR`;
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      
+      if (mediaType === "movie") {
+        return data.imdb_id; // Para filmes, retorna o imdbId
+      } else if (mediaType === "tv") {
+        return data.id; // Para séries, retorna o tmdbId
+      }
+    } catch (error) {
+      console.error("Erro ao buscar IMDb ou TMDB ID:", error);
+    }
+  }
+
+  // Função para exibir os resultados
+  async function displayResults(results) {
+    resultadosDiv.innerHTML = ""; // Limpa os resultados anteriores
+    qtResultados.textContent = results.length; // Exibe a quantidade de resultados
+
+    for (let result of results) {
+      if (result.poster_path) {
+        // Verifica se há imagem
+        const resultElement = document.createElement("div");
+        resultElement.classList.add("MedidasCapaFilme");
+
+        const resultLink = document.createElement("a");
+
+        // Verifica o tipo de mídia e busca o ID correto
+        let contentId = null;
+        if (result.media_type === "movie") {
+          contentId = await getContentId(result.id, "movie");  // Para filmes, pega o IMDb ID
+        } else if (result.media_type === "tv") {
+          contentId = await getContentId(result.id, "tv");  // Para séries, pega o TMDB ID
         }
 
-        // Função para buscar o imdbId
-        async function getImdbId(tmdbId, mediaType) {
-          const url = `https://api.themoviedb.org/3/${mediaType}/${tmdbId}?api_key=${apiKey}&language=pt-BR`;
-          try {
-            const response = await fetch(url);
-            const data = await response.json();
-            return data.imdb_id; // Retorna o imdbId
-          } catch (error) {
-            console.error("Erro ao buscar IMDb ID:", error);
+        // Cria o link com base no tipo de mídia
+        if (contentId) {
+          if (result.media_type === "movie") {
+            resultLink.href = `verConteudo.html?imdbId=${contentId}`;
+          } else if (result.media_type === "tv") {
+            resultLink.href = `verConteudo.html?imdbId=${contentId}&tipo=serie`;
           }
+
+          const resultImage = document.createElement("img");
+          resultImage.classList.add("capaFilme");
+          resultImage.src = `https://image.tmdb.org/t/p/w500${result.poster_path}`;
+          resultImage.alt = result.title || result.name;
+
+          const resultTitle = document.createElement("p");
+          resultTitle.classList.add("nmFilme");
+          resultTitle.textContent = result.title || result.name;
+
+          resultLink.appendChild(resultImage);
+          resultLink.appendChild(resultTitle);
+          resultElement.appendChild(resultLink);
+
+          resultadosDiv.appendChild(resultElement);
         }
+      }
+    }
+  }
 
-        // Função para exibir os resultados
-        async function displayResults(results) {
-          resultadosDiv.innerHTML = ""; // Limpa os resultados anteriores
-          qtResultados.textContent = results.length; // Exibe a quantidade de resultados
+  // Escuta a entrada na barra de pesquisa e realiza a busca
+  queryInput.addEventListener("input", function () {
+    searchMovies(queryInput.value);
+  });
+});
 
-          for (let result of results) {
-            if (result.poster_path) {
-              // Verifica se há imagem
-              const resultElement = document.createElement("div");
-              resultElement.classList.add("MedidasCapaFilme");
-
-              const resultLink = document.createElement("a");
-
-              // Verifica o tipo de mídia e busca o IMDb ID
-              let imdbId = null;
-              if (result.media_type === "movie") {
-                imdbId = await getImdbId(result.id, "movie");
-              } else if (result.media_type === "tv") {
-                imdbId = await getImdbId(result.id, "tv");
-              }
-
-              // Cria o link com base no imdbId
-              if (imdbId) {
-                if (result.media_type === "movie") {
-                  resultLink.href = `verConteudo.html?imdbId=${imdbId}`;
-                } else if (result.media_type === "tv") {
-                  resultLink.href = `verConteudo.html?imdbId=${imdbId}&tipo=serie`;
-                }
-
-                const resultImage = document.createElement("img");
-                resultImage.classList.add("capaFilme");
-                resultImage.src = `https://image.tmdb.org/t/p/w500${result.poster_path}`;
-                resultImage.alt = result.title || result.name;
-
-                const resultTitle = document.createElement("p");
-                resultTitle.classList.add("nmFilme");
-                resultTitle.textContent = result.title || result.name;
-
-                resultLink.appendChild(resultImage);
-                resultLink.appendChild(resultTitle);
-                resultElement.appendChild(resultLink);
-
-                resultadosDiv.appendChild(resultElement);
-              }
-            }
-          }
-        }
-
-        // Escuta a entrada na barra de pesquisa e realiza a busca
-        queryInput.addEventListener("input", function () {
-          searchMovies(queryInput.value);
-        });
-      });
     </script>
   </body>
 </html>

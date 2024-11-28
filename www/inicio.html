@@ -1,69 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
-        <link rel="stylesheet" href="css/styleinicio.css">
-    </head>
-    <body>
-        <div id="fadeScreen" class="fade-screen"></div>
-        <div id="refresh">Recarregando...</div>
-        <div
-            class="tamanhoFilmeCatalogo"
-            id="divertidamente"
-            onclick="window.location.href= href='verConteudo.html?imdbId=tt22022452'"
-            style="background-size: cover"
-        >
-            <!-- <div class="tamanhoFilmeCatalogo" id="venom3" onclick="window.location.href= href='verConteudo.html?imdbId=tt22022452'" style="background-size: cover"> --></div>
-        <div class="generos">
-            <div class="generos-scroll">
-                <div class="item active" style="-webkit-text-stroke: 0.7px white;color: white;">
-                    <b style="color:red;font-size: 18px;-webkit-text-stroke: 0.7px #ff0000">l</b>
-                    Tudo
-                </div>
-                <a href="drama.html">
-                    <div class="item">Filmes</div>
-                </a>
-                <a href="movie.html">
-                    <div class="item">Séries</div>
-                </a>
-                <a href="anime.html">
-                    <div class="item">Comédia</div>
-                </a>
-                <a href="tvshow.html">
-                    <div class="item">Faroeste</div>
-                </a>
-                <a href="terror.html">
-                    <div class="item">Terror</div>
-                </a>
-                <a href="faroeste.html">
-                    <div class="item">Drama</div>
-                </a>
-                <a href="comedia.html">
-                    <div class="item">Ação</div>
-                </a>
-                <a href="action.html">
-                    <div class="item">Aventura</div>
-                </a>
-                <a href="animation.html">
-                    <div class="item">Animação</div>
-                </a>
-                <a href="romance.html"></a>
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
+    <title>Home</title> <!-- Título da página -->
+    <link rel="stylesheet" href="css/styleinicio.css"> <!-- Link para o arquivo CSS -->
+</head>
+<body>
+    <!-- Tela de fade para transições -->
+    <div id="fadeScreen" class="fade-screen"></div>
+    <!-- Mensagem de recarregamento -->
+    <div id="refresh">Recarregando...</div>
+
+    <!-- Seção do filme "Divertidamente" -->
+    <div class="tamanhoFilmeCatalogo" id="sombra">
+    </div>
+
+    <!-- Slides -->
+    <section class="slider_container">
+      <section class="slider">
+        <div class="slide one" onclick="window.location.href='verConteudo.html?imdbId=tt16366836'">
+        </div>
+        <div class="slide two" onclick="window.location.href='verConteudo.html?imdbId=tt22022452'">
+        </div>
+        <div class="slide three" onclick="window.location.href='verConteudo.html?imdbId=tt26731216'">
+        </div>
+        <div class="slide four" onclick="window.location.href='verConteudo.html?imdbId=tt29268110'">
+        </div>
+        <div class="slide four" onclick="window.location.href='verConteudo.html?imdbId=tt14961016'">
+        </div>
+      </section>
+    </section>
+
+    <!-- Seção de gêneros de filmes -->
+    <div class="generos">
+        <div class="generos-scroll">
+            <div class="item active" style="-webkit-text-stroke: 0.7px white;color: white;">
+                <b style="color:red;font-size: 18px;-webkit-text-stroke: 0.7px #ff0000">l</b>
+                Tudo
+            </div>
+            <a href="drama.html">
+                <div class="item">Filmes</div>
+            </a>
+            <a href="movie.html">
+                <div class="item">Séries</div>
+            </a>
+            <a href="anime.html">
+                <div class="item">Comédia</div>
+            </a>
+            <a href="tvshow.html">
+                <div class="item">Faroeste</div>
+            </a>
+            <a href="terror.html">
+                <div class="item">Terror</div>
+            </a>
+            <a href="faroeste.html">
+                <div class="item">Drama</div>
+            </a>
+            <a href="comedia.html">
+                <div class="item">Ação</div>
+            </a>
+            <a href="action.html">
+                <div class="item">Aventura</div>
+            </a>
+            <a href="animation.html">
+                <div class="item">Animação</div>
+            </a>
+            <a href="romance.html">
                 <div class="item">Romance</div>
             </a>
         </div>
     </div>
+
     <div class="bordas">
-        <!-- NATAL -->
+        <!-- Seção de filmes de Natal -->
         <br>
         <div class="titulo">
-            <div class="nmTitulo">
-                Então é Natal...
-            </div>
+            <div class="nmTitulo">Então é Natal...</div>
             <label class="seeAll">Ver mais</label>
         </div>
         <div class="Playlist">
+            <!-- Cada filme é representado por um container -->
             <div class="MedidasCapaFilme">
                 <a class="redirect-link" href="verConteudo.html?imdbId=tt4729430">
                     <img crossorigin="anonymous" class="capaFilme" src="https://br.web.img3.acsta.net/pictures/19/10/09/17/03/0582059.jpg">
@@ -113,14 +130,14 @@
                 </a>
             </div>
         </div>
-        <!-- NAO ASSISTIR SOZINHO -->
+
+        <!-- Seção de filmes de terror -->
         <div class="titulo">
-            <div class="nmTitulo">
-                Para não assistir sozinho
-            </div>
+            <div class="nmTitulo">Para não assistir sozinho</div>
             <label class="seeAll">Ver mais</label>
         </div>
         <div class="Playlist">
+            <!-- Cada filme é representado por um container -->
             <div class="MedidasCapaFilme">
                 <a class="redirect-link" href="verConteudo.html?imdbId=tt0185937">
                     <img crossorigin="anonymous" class="capaFilme" src="https://m.media-amazon.com/images/S/pv-target-images/55c94bd94a5a91e7cac3d69b704c2d538d5913c00f99f1954ec8673be8f251d1.jpg">
@@ -170,14 +187,14 @@
                 </a>
             </div>
         </div>
-        <!-- PARA CHORAR DE RIR -->
+
+        <!-- Seção de filmes de comédia -->
         <div class="titulo">
-            <div class="nmTitulo">
-                O melhor da comédia
-            </div>
+            <div class="nmTitulo">O melhor da comédia</div>
             <label class="seeAll">Ver mais</label>
         </div>
         <div class="Playlist">
+            <!-- Cada filme é representado por um container -->
             <div class="MedidasCapaFilme">
                 <a class="redirect-link" href="verConteudo.html?imdbId=tt0123964">
                     <img crossorigin="anonymous" class="capaFilme" src="https://m.media-amazon.com/images/S/pv-target-images/503d47d7093e4cd483ada2dd1b81e00ee023ff76979684a82982696c4ab6cd49.jpg">
@@ -227,14 +244,14 @@
                 </a>
             </div>
         </div>
-        <!-- HISTORIAS EMOCIONANTES -->
+
+        <!-- Seção de filmes emocionais -->
         <div class="titulo">
-            <div class="nmTitulo">
-                Caiu um cisco no meu olho...
-            </div>
+            <div class="nmTitulo">Caiu um cisco no meu olho...</div>
             <label class="seeAll">Ver mais</label>
         </div>
         <div class="Playlist">
+            <!-- Cada filme é representado por um container -->
             <div class="MedidasCapaFilme">
                 <a class="redirect-link" href="verConteudo.html?imdbId=tt2872518">
                     <img crossorigin="anonymous" class="capaFilme" src="https://m.media-amazon.com/images/I/71ydFW-qgQL._AC_UF1000,1000_QL80_.jpg">
@@ -284,14 +301,14 @@
                 </a>
             </div>
         </div>
-        <!-- PARA ASSISTIR EM FAMÍLIA -->
+
+        <!-- Seção de filmes para assistir em família -->
         <div class="titulo">
-            <div class="nmTitulo">
-                Momento em família
-            </div>
+            <div class="nmTitulo">Momento em família</div>
             <label class="seeAll">Ver mais</label>
         </div>
         <div class="Playlist">
+            <!-- Cada filme é representado por um container -->
             <div class="MedidasCapaFilme">
                 <a class="redirect-link" href="verConteudo.html?imdbId=tt2283362">
                     <img crossorigin="anonymous" class="capaFilme" src="https://br.web.img2.acsta.net/pictures/17/11/28/19/03/5043910.jpg">
@@ -341,18 +358,18 @@
                 </a>
             </div>
         </div>
-        <!-- Encontrar Novas Historias -->
+
+        <!-- Seção de filmes de ficção científica -->
         <div class="titulo">
-            <div class="nmTitulo">
-                Além da realidade
-            </div>
+            <div class="nmTitulo">Além da realidade</div>
             <label class="seeAll">Ver mais</label>
         </div>
         <div class="Playlist">
+            <!-- Cada filme é representado por um container -->
             <div class="MedidasCapaFilme">
-                <a class="redirect-link" href="verConteudo.html?imdbId=tt8864596">
-                    <img crossorigin="anonymous" class="capaFilme" src="https://br.web.img3.acsta.net/img/97/40/974022a6a23f50c69934800da9d6f98d.jfif">
-                    <p class="nmFilme">Transformers: O Início</p>
+                <a class="redirect-link" href="verConteudo.html?imdbId=tt0418279">
+                    <img crossorigin="anonymous" class="capaFilme" src="https://upload.wikimedia.org/wikipedia/pt/e/ee/Transformers-poster.jpg">
+                    <p class="nmFilme">Transformers</p>
                 </a>
             </div>
             <div class="MedidasCapaFilme">
@@ -370,7 +387,7 @@
             <div class="MedidasCapaFilme">
                 <a class="redirect-link" href="verConteudo.html?imdbId=tt2488496">
                     <img crossorigin="anonymous" class="capaFilme" src="https://m.media-amazon.com/images/I/81QWAGT3FdL._AC_UF894,1000_QL80_.jpg">
-                    <p class="nmFilme">Star Wars 7: O Despertar da Força</p>
+                    <p class="nmFilme">Star Wars 7: O Despert ar da Força</p>
                 </a>
             </div>
             <div class="MedidasCapaFilme">
@@ -380,9 +397,9 @@
                 </a>
             </div>
             <div class="MedidasCapaFilme">
-                <a class="redirect-link" href="verConteudo.html?imdbId=tt1630029">
-                    <img crossorigin="anonymous" class="capaFilme" src="https://lumiere-a.akamaihd.net/v1/images/image_1c148dd1.jpeg">
-                    <p class="nmFilme">Avatar: O Caminho da Água</p>
+                <a class="redirect-link" href="verConteudo.html?imdbId=tt0499549">
+                    <img crossorigin="anonymous" class="capaFilme" src="https://m.media-amazon.com/images/M/MV5BMDEzMmQwZjctZWU2My00MWNlLWE0NjItMDJlYTRlNGJiZjcyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg">
+                    <p class="nmFilme">Avatar</p>
                 </a>
             </div>
             <div class="MedidasCapaFilme">
@@ -399,13 +416,13 @@
             </div>
         </div>
     </div>
+
+    <!-- Barra de navegação -->
     <div class="navbar">
         <div class="nav-item" style="margin-top: 0%;">
             <div class="telaAtual">
                 <img src="imagens/home.svg" alt="Home" style="margin-left: 13%;margin-bottom: 1%;">
-                <label style="margin-bottom: -1%;">
-                    Início
-                </label>
+                <label style="margin-bottom: -1%;">Início</label>
             </div>
         </div>
         <a href="pesquisa.html">
@@ -424,139 +441,148 @@
             </div>
         </a>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <script> 
-    const slides = document.querySelectorAll(".carousel-slide");
-    const dots = document.querySelectorAll(".dot");
-    let currentIndex = 0;
-    function updateCarousel(index) {
-      const offset = index * -100; // Mover para a esquerda baseado no índice
-      slides.forEach(slide => {
-        slide.style.transform = `translateX(${offset}%)`;
-      });
-      dots.forEach(dot => dot.classList.remove("active"));
-      dots[index].classList.add("active");
-    }
-    dots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        currentIndex = index;
-        updateCarousel(index);
-      });
-    });
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      updateCarousel(currentIndex);
-    }, 1000000); // Muda automaticamente a cada 5 segundos, é 5000, mas vou deixar 1000000
 
-    function getDominantColor(imgElement, callback) {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = imgElement.naturalWidth;
-    canvas.height = imgElement.naturalHeight;
-    ctx.drawImage(imgElement, 0, 0, canvas.width, canvas.height);
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    <br><br><br><br>
 
-    let r = 0, g = 0, b = 0, count = 0;
-    for (let i = 0; i < imageData.length; i += 4) {
-        r += imageData[i];
-        g += imageData[i + 1];
-        b += imageData[i + 2];
-        count++;
-    }
-    r = Math.floor(r / count);
-    g = Math.floor(g / count);
-    b = Math.floor(b / count);
-    callback(`rgba(${r},${g},${b}, 0.5)`);
-}
+    <script>
+        // Seleciona todos os slides e pontos do carrossel
+        const slides = document.querySelectorAll(".carousel-slide");
+        const dots = document.querySelectorAll(".dot");
+        let currentIndex = 0;
 
-document.querySelectorAll('.MedidasCapaFilme').forEach(container => {
-    const img = container.querySelector('.capaFilme');
-    img.addEventListener('load', () => {
-        getDominantColor(img, color => {
-            img.style.boxShadow = `0 0 10px ${color}`; /* Aplica o box-shadow */
+        // Atualiza o carrossel com base no índice
+        function updateCarousel(index) {
+            const offset = index * -100; // Mover para a esquerda baseado no índice
+            slides.forEach(slide => {
+                slide.style.transform = `translateX(${offset}%)`;
+            });
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[index].classList.add("active");
+        }
+
+        // Adiciona evento de clique aos pontos do carrossel
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                currentIndex = index;
+                updateCarousel(index);
+            });
         });
-    });
-});
-// Aguarda o carregamento completo do DOM
-document.addEventListener("DOMContentLoaded", () => {
-    // Seleciona todos os containers com a classe 'Playlist'
-    const playlists = document.querySelectorAll('.Playlist');
 
-    // Itera sobre cada container para embaralhar os filmes individualmente
-    playlists.forEach(playlist => {
-        // Converte os filhos (as divs) em um array para manipulação
-        const filmes = Array.from(playlist.children);
+        // Muda automaticamente a cada 5 segundos
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel(currentIndex);
+        }, 1000000); // Tempo de mudança
 
-        // Embaralha as divs usando o algoritmo de Fisher-Yates
-        for (let i = filmes.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [filmes[i], filmes[j]] = [filmes[j], filmes[i]];
+        // Função para obter a cor dominante de uma imagem
+        function getDominantColor(imgElement, callback) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = imgElement.naturalWidth;
+            canvas.height = imgElement.natural Height;
+            ctx.drawImage(imgElement, 0, 0, canvas.width, canvas.height);
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+
+            let r = 0, g = 0, b = 0, count = 0;
+            for (let i = 0; i < imageData.length; i += 4) {
+                r += imageData[i];
+                g += imageData[i + 1];
+                b += imageData[i + 2];
+                count++;
+            }
+            r = Math.floor(r / count);
+            g = Math.floor(g / count);
+            b = Math.floor(b / count);
+            callback(`rgba(${r},${g},${b}, 0.5)`); // Retorna a cor dominante
         }
 
-        // Remove todas as divs do container original
-        playlist.innerHTML = "";
+        // Aplica a cor dominante como sombra nas capas dos filmes
+        document.querySelectorAll('.MedidasCapaFilme').forEach(container => {
+            const img = container.querySelector('.capaFilme');
+            img.addEventListener('load', () => {
+                getDominantColor(img, color => {
+                    img.style.boxShadow = `0 0 10px ${color}`; // Aplica o box-shadow
+                });
+            });
+        });
 
-        // Adiciona as divs embaralhadas de volta ao container
-        filmes.forEach(filme => playlist.appendChild(filme));
-    });
-});
+        // Aguarda o carregamento completo do DOM
+        document.addEventListener("DOMContentLoaded", () => {
+            // Seleciona todos os containers com a classe 'Playlist'
+            const playlists = document.querySelectorAll('.Playlist');
 
+            // Itera sobre cada container para embaralhar os filmes individualmente
+            playlists.forEach(playlist => {
+                // Converte os filhos (as divs) em um array para manipulação
+                const filmes = Array.from(playlist.children);
 
-document.addEventListener('DOMContentLoaded', () => {
-    let touchStartY = 0;  // Posição inicial do toque
-    let touchEndY = 0;    // Posição final do toque
-    const refreshElement = document.getElementById('refresh');
+                // Embaralha as divs usando o algoritmo de Fisher-Yates
+                for (let i = filmes.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [filmes[i], filmes[j]] = [filmes[j], filmes[i]];
+                }
 
-    // Detecta o início do toque
-    document.addEventListener('touchstart', (event) => {
-        touchStartY = event.touches[0].clientY;
-    });
+                // Remove todas as divs do container original
+                playlist.innerHTML = "";
 
-    // Detecta o fim do toque (movimento do dedo)
-    document.addEventListener('touchend', (event) => {
-        touchEndY = event.changedTouches[0].clientY;
+                // Adiciona as divs embaralhadas de volta ao container
+                filmes.forEach(filme => playlist.appendChild(filme));
+            });
+        });
 
-        // Verifica se a página está no topo (scroll top é 0)
-        if (window.scrollY === 0 && touchEndY - touchStartY > 50) {
-            // Mostra o elemento de recarga
-            refreshElement.classList.add('show');
+        // Detecta toques para recarregar a página
+        document.addEventListener('DOMContentLoaded', () => {
+            let touchStartY = 0;  // Posição inicial do toque
+            let touchEndY = 0;    // Posição final do toque
+            const refreshElement = document.getElementById('refresh');
 
-            // Simula um "recarregamento" após 1 segundo (ajuste conforme necessário)
+            // Detecta o início do toque
+            document.addEventListener('touchstart', (event) => {
+                touchStartY = event.touches[0].clientY;
+            });
+
+            // Detecta o fim do toque (movimento do dedo)
+            document.addEventListener('touchend', (event) => {
+                touchEndY = event.changedTouches[0].clientY;
+
+                // Verifica se a página está no topo (scroll top é 0)
+                if (window.scrollY === 0 && touchEndY - touchStartY > 50) {
+                    // Mostra o elemento de recarga
+                    refreshElement.classList.add('show');
+
+                    // Simula um "recarregamento" após 1 segundo (ajuste conforme necessário)
+                    setTimeout(() => {
+                        location.reload();  // Recarrega a página
+                    }, 1000);  // A animação dura 1 segundo
+                }
+            });
+        });
+
+        // Captura todos os links com a classe 'redirect-link'
+        const links = document.querySelectorAll('.redirect-link');
+
+        // Função para ativar o efeito de fade
+        function handleLinkClick(event) {
+            event.preventDefault(); // Previne o comportamento padrão do link
+
+            // Adiciona a classe 'active' à tela preta para fazer o fade-in
+            const fadeScreen = document.getElementById('fadeScreen');
+            fadeScreen.classList.add('active');
+
+            // Acessa o href do link corretamente
+            const href = event.currentTarget.href;
+
+            // Redireciona após a animação (tempo igual ao da animação fade)
             setTimeout(() => {
-                location.reload();  // Recarrega a página
-            }, 1000);  // A animação dura 1 segundo
+                // Redireciona
+                window.location.href = href;
+            }, 500); // O tempo da animação de fade (0.5s)
         }
-    });
-});
 
-// Captura todos os links com a classe 'redirect-link'
-const links = document.querySelectorAll('.redirect-link');
-
-// Função para ativar o efeito de fade
-function handleLinkClick(event) {
-  event.preventDefault(); // Previne o comportamento padrão do link
-
-  // Adiciona a classe 'active' à tela preta para fazer o fade-in
-  const fadeScreen = document.getElementById('fadeScreen');
-  fadeScreen.classList.add('active');
-
-  // Acessa o href do link corretamente
-  const href = event.currentTarget.href;
-
-  // Redireciona após a animação (tempo igual ao da animação fade)
-  setTimeout(() => {
-    // Redireciona
-    window.location.href = href;
-  }, 500); // O tempo da animação de fade (0.5s)
-}
-
-// Adiciona o evento de clique a todos os links
-links.forEach(link => {
-  link.addEventListener('click', handleLinkClick);
-});
+        // Adiciona o evento de clique a todos os links
+        links.forEach(link => {
+            link.addEventListener('click', handleLinkClick);
+        });
     </script>
 </body>
 </html>
